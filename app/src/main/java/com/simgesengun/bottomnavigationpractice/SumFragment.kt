@@ -1,0 +1,31 @@
+package com.simgesengun.bottomnavigationpractice
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_sum.view.*
+import java.text.DecimalFormat
+
+class SumFragment : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+
+    ): View? {
+        val design = inflater.inflate(R.layout.fragment_sum, container, false)
+        design.toolbarSum.title = "Summation"
+        design.buttonSum.setOnClickListener{
+            val result:Double = design.editTextFirstNumber.text.toString().toDouble() + design.editTextSecondNumber.text.toString().toDouble()
+            val df = DecimalFormat()
+            df.isDecimalSeparatorAlwaysShown = false
+            val nav = SumFragmentDirections.sumResultNav(df.format(result))
+            Navigation.findNavController(it).navigate(nav)
+        }
+        return design
+    }
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sumFragment"
+        android:icon="@drawable/icon_sum"
+        android:title="Sum" />
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/icon_home"
+        android:title="Homepage" />
+    <item
+        android:id="@+id/multiplyFragment"
+        android:icon="@drawable/icon_multiply"
+        android:title="Multiply" />
+</menu>

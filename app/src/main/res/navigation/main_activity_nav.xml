@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.simgesengun.bottomnavigationpractice.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/multiplyFragment"
+        android:name="com.simgesengun.bottomnavigationpractice.MultiplicationFragment"
+        android:label="MultiplyFragment"
+        tools:layout="@layout/fragment_multiplication">
+        <action
+            android:id="@+id/multiplicationResultNav"
+            app:destination="@id/multiplicationResultFragment"
+            app:popUpTo="@id/multiplyFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sumFragment"
+        android:name="com.simgesengun.bottomnavigationpractice.SumFragment"
+        android:label="SumFragment"
+        tools:layout="@layout/fragment_sum">
+        <action
+            android:id="@+id/sumResultNav"
+            app:destination="@id/sumResultFragment"
+            app:popUpTo="@id/sumFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sumResultFragment"
+        android:name="com.simgesengun.bottomnavigationpractice.SumResultFragment"
+        android:label="SumResultFragment"
+        tools:layout="@layout/fragment_sum_result">
+        <argument
+            android:name="sumResult"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplicationResultFragment"
+        android:name="com.simgesengun.bottomnavigationpractice.MultiplicationResultFragment"
+        android:label="MultiplicationResultFragment"
+        tools:layout="@layout/fragment_multiplication_result">
+        <argument
+            android:name="multiplicationResult"
+            app:argType="string" />
+    </fragment>
+</navigation>
